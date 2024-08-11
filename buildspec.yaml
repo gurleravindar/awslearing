@@ -13,6 +13,9 @@ phases:
   post_build:
     commands:
       - echo configuring ngix
+  pre_build:
+    commands:
+      - echo configuring ngix started
   artifacts:
     files:
      - /var/www/html/index.html
