@@ -1,21 +1,22 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - echo configuring nginx started
   install:
     commands:
-      - echo installing inginix - echo apt-get install inginix
+      - echo installing nginx
       - sudo apt-get update
       - sudo apt-get install nginx -y
   build:
     commands:
-      - echo Build started on date
+      - echo Build started on `date`
       - cp index.html /var/www/html
   post_build:
     commands:
-      - echo configuring ngix
-  pre_build:
-    commands:
-      - echo configuring ngix started
-  artifacts:
-    files:
-     - /var/www/html/index.html
+      - echo configuring nginx
+
+artifacts:
+  files:
+    - /var/www/html/index.html
