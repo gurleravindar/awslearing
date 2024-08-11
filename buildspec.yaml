@@ -14,4 +14,5 @@ phases:
     commands:
       - echo configuring ngix
   artifacts:
-    - /var/www/html/index/html
+    files:
+     -/var/www/html/index/html
